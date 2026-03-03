@@ -1,0 +1,98 @@
+% DOCUMENT CLASS SETUP
+\documentclass[12pt, a4paper]{article}
+
+% DOCUMENT PACKAGES
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+
+% FONT AND ENCODING SETUP
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fontspec}
+
+% PROFESSIONAL CODE BLOCK
+\usepackage{tcolorbox}
+\tcbuselibrary{minted, skins, breakable}
+
+% DEFINE GITHUB DARK THEME COLORS %
+\definecolor{ghback}{HTML}{0d1117}    % Dark background
+\definecolor{ghtext}{HTML}{c9d1d9}    % Light gray text
+\definecolor{ghborder}{HTML}{30363d}  % GitHub Border color
+
+% PROFESSIONAL CODE BLOCK CONFIGURATION (MINTED VERSION) %
+\renewcommand{\theFancyVerbLine}{\textcolor{white!60!gray}{\scriptsize\arabic{FancyVerbLine}}}
+\newtcblisting{codeblock}[2][]{
+    enhanced,
+    breakable,
+    colback=ghback,
+    colframe=ghborder,
+    coltitle=ghtext,
+    fonttitle=\bfseries\small,
+    arc=3mm,
+    boxrule=0.5mm,
+    % PADDING SETTINGS
+    left=25pt,
+    right=10pt,
+    top=5pt,
+    bottom=5pt,
+    % MINTED SETTINGS
+    listing engine=minted,
+    listing only,
+    minted language=python,
+    minted options={
+        linenos,
+        numbersep=5pt,
+        fontsize=\footnotesize,
+        breaklines=true,
+        autogobble,
+        style=monokai,
+    },
+    title={#2},
+    #1
+}
+
+% DEFINE DOCUMENT CUSTOM MARCOS %
+\newcommand{\sol}{\par\noindent\underline{\textbf{Sol.}} }
+\newcommand{\ans}{\par\noindent\underline{\textbf{Ans.}} }
+
+% DOCUMENT TITLE SETUP %
+\title {
+	\textbf{2110573 PATTERN RECOGNITION} \\
+    \vspace{1em}
+	\Large{\textbf{Homework 3: GMM}} \\
+    \vspace{0.5em}
+    \large{Computer Engineering, Chulalongkorn Univerity}
+}
+\author{Worralop Srichainont}
+\date{\today}
+\setlength{\droptitle}{15em}
+
+% DOCUMENT CONTENTS
+\begin{document}
+
+    \maketitle
+    \thispagestyle{empty}
+    \clearpage
+
+    \pagenumbering{arabic}
+
+    \section{Google Colab}
+        \noindent For problem T1 - T4
+        
+        \noindent \url{https://colab.research.google.com/drive/1-KW-AA3R5MkhJRuyNt19wgAsJLrK15Iz}
+
+        \vspace{1em}
+
+        \noindent For problem T5 - T25
+        
+        \noindent \url{https://colab.research.google.com/drive/1btdl6-pEX-z6o5H9LKRP67yQYOlmTP1x}
+
+\end{document}
