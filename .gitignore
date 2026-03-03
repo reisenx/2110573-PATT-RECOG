@@ -5,6 +5,7 @@
 *.cph
 
 # Code Testing
+*test
 *test.py
 *test.cpp
 *.exe
@@ -16,3 +17,12 @@
 
 # LaTeX
 *.tex.bak
+*_minted
+*.tex.bak
+*.listing
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.tex.bak
+*.toc
