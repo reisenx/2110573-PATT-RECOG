@@ -4,28 +4,27 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
+
 class SimpleBayesClassifier:
 
     def __init__(self, n_pos, n_neg):
-        
         """
         Initializes the SimpleBayesClassifier with prior probabilities.
 
         Parameters:
         n_pos (int): The number of positive samples.
         n_neg (int): The number of negative samples.
-        
+
         Returns:
         None: This method does not return anything as it is a constructor.
         """
 
-        self.n_pos =
-        self.n_neg =
-        self.prior_pos = 
-        self.prior_neg =
+        self.n_pos = None
+        self.n_neg = None
+        self.prior_pos = None
+        self.prior_neg = None
 
-    def fit_params(self, x, y, n_bins = 10):
-
+    def fit_params(self, x, y, n_bins=10):
         """
         Computes histogram-based parameters for each feature in the dataset.
 
@@ -35,7 +34,7 @@ class SimpleBayesClassifier:
         n_bins (int): Number of bins to use for histogram calculation.
 
         Returns:
-        (stay_params, leave_params): A tuple containing two lists of tuples, 
+        (stay_params, leave_params): A tuple containing two lists of tuples,
         one for 'stay' parameters and one for 'leave' parameters.
         Each tuple in the list contains the bins and edges of the histogram for a feature.
         """
@@ -44,11 +43,10 @@ class SimpleBayesClassifier:
         self.leave_params = [(None, None) for _ in range(x.shape[1])]
 
         # INSERT CODE HERE
-        
+
         return self.stay_params, self.leave_params
 
-    def predict(self, x, thresh = 0):
-
+    def predict(self, x, thresh=0):
         """
         Predicts the class labels for the given samples using the non-parametric model.
 
@@ -65,9 +63,8 @@ class SimpleBayesClassifier:
         # INSERT CODE HERE
 
         return y_pred
-    
-    def fit_gaussian_params(self, x, y):
 
+    def fit_gaussian_params(self, x, y):
         """
         Computes mean and standard deviation for each feature in the dataset.
 
@@ -85,11 +82,10 @@ class SimpleBayesClassifier:
         self.gaussian_leave_params = [(0, 0) for _ in range(x.shape[1])]
 
         # INSERT CODE HERE
-        
-        return self.gaussian_stay_params, self.gaussian_leave_params
-    
-    def gaussian_predict(self, x, thresh = 0):
 
+        return self.gaussian_stay_params, self.gaussian_leave_params
+
+    def gaussian_predict(self, x, thresh=0):
         """
         Predicts the class labels for the given samples using the parametric model.
 
